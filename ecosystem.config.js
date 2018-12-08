@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "notifier",
-      script: "./server/bin/www",
+      script: "./bin/www",
       error_file: __dirname + "/../logs/notifier/err.log",
       out_file: __dirname + "/../logs/notifier/out.log",
       watch: true,
