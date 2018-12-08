@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const dotenv = require("dotenv");
+const cors = require("cors");
 dotenv.load();
 const mongoHandler = require("./libs/mongoHandler");
 const SocketIOHandler = require("./libs/socketIOHandler");
@@ -20,6 +21,7 @@ mongodb.connect();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
